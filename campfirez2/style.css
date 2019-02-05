@@ -1,0 +1,306 @@
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+
+/* zocial */
+[class*="zocial-"]:before {
+  font-family: 'zocial', sans-serif;
+}
+
+/* fontawesome */
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+}
+body {
+	margin:0px;
+}
+#sideBar {
+	position:fixed;
+background: #ff7b0d; /* Old browsers */
+background: -moz-linear-gradient(left,  #ff7b0d 0%, #ffa84c 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right top, color-stop(0%,#ff7b0d), color-stop(100%,#ffa84c)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(left,  #ff7b0d 0%,#ffa84c 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(left,  #ff7b0d 0%,#ffa84c 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(left,  #ff7b0d 0%,#ffa84c 100%); /* IE10+ */
+background: linear-gradient(to right,  #ff7b0d 0%,#ffa84c 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff7b0d', endColorstr='#ffa84c',GradientType=1 ); /* IE6-9 */
+
+	width:50px;
+	float:left;
+	height:100%;
+}
+#sideBar ul
+{
+list-style-type:none;
+margin:0;
+padding:0;
+overflow:hidden;
+}
+#sideBar li
+{
+float:left;
+}
+#sideBar li:first-child {
+border-width:1px 0px;
+}
+#sideBar li
+{
+display:block;
+width:100%;
+text-align:center;
+color:black;
+text-decoration:none;
+font-size:25px;
+padding:5px 0px;
+border-width:0px 0px 1px 0px;
+border-style:solid;
+border-color:grey; 
+transition: all .5s;
+-webkit-transition: all .25s;
+-moz-transition: all .25s;
+-o-transition: all .25s;
+}
+#sideBar li:hover {
+color:rgba(0,0,0,.5);
+padding-left:5px;
+}
+[id*="-content"] {
+	position:absolute;
+	height:50px;
+	width:200px;
+	border-radius:3px;
+	background:#F8F8F8;
+	box-shadow:0px 0px 3px chocolate;
+	left:60px;
+	margin-top:-38px;
+	display:none;
+}
+#search-content {
+	height:30px;
+	width:245px;
+	margin-top:-30px;
+	padding:3px;
+}
+#search-content input[type="submit"] {
+	background:#f18d05;
+	border-radius:50px;
+	border:none;
+	font-size:13px;
+	padding:5px 10px;
+	color:white;
+}
+#addPost-content {
+	height:30px;
+	width:260px;
+	margin-top:-30px;
+	padding:3px;
+}
+#content {
+	margin-left:50px;
+	font-family: 'Happy Monkey', cursive;
+}
+.x {
+	background:transparent;
+	border-radius:100px;
+	background-color:red;
+	border:none;
+	top:-10px;
+	right:-10px;
+	position:absolute;
+}
+.left {
+	float:left;
+}
+.right {
+	float:right;
+}
+.0margin {
+	margin:0px;
+}
+@media (max-width:480px) {
+	#sideBar {
+		width:40px;
+	}
+	#content {
+		margin-left:40px;
+	}
+}
+
+/********************
+posts
+********************/
+
+.box {
+	margin:0px 10px 10px 10px;
+	border-style:solid;
+	border-width:2px;
+	padding:5px;
+	font-size:14px;
+	width:270px;
+}
+.postOuter:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+.textOnBottom {
+width:100%;
+} 
+
+/*******************
+userPage
+*******************/
+
+@media (max-width:480px) {
+	#sideBar {
+		width:40px;
+	}
+	#content {
+		margin-left:40px;
+	}
+}
+
+#bigProfPic {
+width:200px;
+height:200px;
+margin-top:30px;
+}
+
+
+#bigProfPicDiv {
+width:100%;
+height:300px;
+opacity:.8;
+text-align:center;
+}
+
+.submitParam{
+border:none;
+background:transparent;
+color:blue;
+text-decoration:underline;
+}
+
+.resizeDiv {
+    width: 350px;
+    height: 100%;
+    border: 1px solid #CCC;
+	left:0px;
+	top:0px;
+	position:fixed;
+    background-color:red;  
+	
+}
+.resizeDiv div{
+transition: all .2s;
+-webkit-transition: all .2s; /* Safari */
+}
+#divvv {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #CCC;
+}
+
+#handle {
+    width: 10px;
+    height: 100%;
+    background-color: gray;
+	position:relative;
+}
+
+.outer {
+   overflow-x: show;
+    height: 92%;		
+	top:58px;
+	width:100%;
+    white-space:nowrap;
+	left:0px;
+	position:absolute;
+	padding-left:1%;
+  }
+  
+  /* .outer1{
+  top:33%;
+  }
+  
+  .outer2{
+  top:33%;
+  }
+  
+   .outer3{
+  top:33%;
+  }*/
+
+  .likesAndStuff{
+position:relative;
+ float:right;
+  width:10%;
+  top:0px;
+  height:100%;
+  background-color:rgba(250, 250, 240, .85);
+  opacity:.85;
+  }
+  
+  .postStuff{
+position:relative;
+text-align:center;
+  width:98%;
+  left:1%;
+  padding-bottom:12px;
+  top:0px;
+  border-style:solid;
+  border-color:black;
+  border-width:0px;
+  border-top-width:1px;
+  }
+  
+  .boxThingys2{
+
+    margin-left:0%;
+	margin-top:.5%;
+	margin-bottom:.5%;
+	margin-right:1%;
+	border-style:solid;
+	border-width:1px;
+	border-color:black;
+	background-color:rgba(250, 250, 240, .75);
+	/*box-shadow:3px 3px 5px ivory;*/
+    display: inline-block;
+	overflow-x:hidden;
+	overflow-y:scroll;
+	white-space:normal;
+  }
+  
+  .hashtag{
+    display: inline-block;
+	padding-left:5px;
+	padding-right:5px;
+	color:blue;
+  }
+  
+  .hashtag:hover{
+ /* background-color:rgb(255, 127, 39); */
+  color:rgb(255, 127, 39);
+  cursor:pointer;
+  }
+
+.buttons {
+position:relative;
+width:1000px;
+margin:auto;
+height:45px;
+opacity:.9;
+background-color:rgb(255, 127, 39);
+}
+
+.moving {
+transition: all .2s;
+-webkit-transition: all .2s; /* Safari */
+}
+
+
+

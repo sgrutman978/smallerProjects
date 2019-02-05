@@ -1,0 +1,234 @@
+<style>
+table, tr, td{
+ border:solid black 1px;
+}
+td{
+    padding:6px 10px;
+}
+table {
+    border-collapse: collapse;
+}
+</style>
+<script>
+        var board = Array([],[],[],[],[],[],[],[],[]);
+        var dd = 20;
+        var ee = 0;
+        var ff = 0;
+        var gg = 0;
+        var hh = 0;
+        var ii = 0;
+        var jj = 0;
+        var aa = 0;
+        var bb = 0;
+        var i = 0;
+        var too = 0;
+
+        //  board[0][00] = 11;
+        // alert(board[0][0]);
+        
+        //This huge chunk of code generates a random sudoku board with all values filled in.
+        hey();
+         function hey(){
+            dd = 20;
+            for (aa = 0; aa < 9; aa++){
+             for (bb = 0; bb < 9; bb++){
+                 dd++;
+                 board[aa][bb] = dd;
+                  // alert(board[aa][bb]);
+             }
+         }
+     }
+
+     function restart(){
+        too++;
+    if(too > 1000000){
+        dd = 20;
+         ee = 111110;
+         ff = 1111110;
+        gg = 1111110;
+        hh = 111110;
+         ii = 1111110;
+        jj = 1111110;
+         aa = 1111110;
+       bb = 1111110;
+        i = 1111110;
+        location.reload();
+    }
+     }
+         
+        for (aa = 0; aa < 9 && aa > -1; aa++){
+            restart();
+             for (bb = 0; bb < 9 && bb > -1; bb++){
+                 restart();
+i = Math.floor(Math.random()*9)+1;
+board[aa][bb] = i;
+for (cc = 0; cc < 9; cc++){
+     restart();
+    if(board[aa][bb] == board[aa][cc] && bb!=cc){ 
+        dd++;
+        ee++;
+        board[aa][bb] = dd;
+        if(ee > 250){
+            if(aa > 0){
+            bb = bb - 2;
+        }else{
+            location.reload();
+        }
+        if(bb < 1 && aa > 0){
+            aa--;
+        bb = 8;
+        } 
+        }else{
+           bb--; 
+        }
+        cc = 10;
+    }else{
+         if(board[aa][bb] == board[cc][bb] && aa!=cc){
+              dd++;
+              ee++;
+        board[aa][bb] = dd;
+        if(ee > 250){
+           if(aa > 0){
+            bb = bb - 2;
+        }else{
+           location.reload();
+        }
+        if(bb < 1 && aa > 0){
+            aa--;
+        bb = 8;
+        } 
+        }else{
+           bb--; 
+        }
+        cc = 10;
+         }else{
+             for(ff = aa; ff > -1; ff--){
+                 restart();
+                 if(ff%3 == 0){
+                     ii = ff;
+                     ff = -2;
+                 }
+             }
+             for(ff = bb; ff > -1; ff--){
+                 restart();
+                 if(ff%3 == 0){
+                     jj = ff;
+                     ff = -2;
+                 }
+             }
+              for (gg = ii; gg < ii+3; gg++){
+                 restart();
+             for (hh = jj; hh < jj+3; hh++){
+                 restart();
+                 if (board[aa][bb] == board[gg][hh] && aa != gg && bb != hh){
+                       dd++;
+              ee++;
+        board[aa][bb] = dd;
+        if(ee > 250){
+           if(aa > 0){
+            bb = bb - 2;
+        }else{
+            location.reload();
+        }
+        if(bb < 1 && aa > 0){
+            aa--;
+        bb = 8;
+        } 
+        }else{
+           bb--; 
+        }
+        cc = 10;
+        gg = 100;
+            hh = 100;
+                 }else{
+                     if(cc == 8){
+board[aa][bb] = i;
+ee = 0;
+gg = 100;
+            hh = 100;
+        }
+                 }
+             }
+             }
+    }
+    }}}}
+        
+     document.write("<button onclick='myFunction()'>Click Me for Answer</button></br><span id='answer' style='display:none'>");
+     printIt();   
+     document.write("</span>----------------------------------------</br></br>Random Sudoku Board <button onclick='location.reload();'>New Puzzle</button></br>");
+
+
+function myFunction(){
+    if(document.getElementById('answer').style.display == "block"){
+    document.getElementById('answer').style.display = "none";
+}else{
+    document.getElementById('answer').style.display = "block";
+}
+}
+
+// This makes a random amount of blank spaces for the user to solve the Sudoku.
+i = (42 + Math.floor(Math.random()*8));
+       for (cc = 0; cc < i; cc++){
+aa = Math.floor(Math.random()*9);
+bb = Math.floor(Math.random()*9);
+if(board[aa][bb] != 0){
+board[aa][bb] = 0;
+}else{
+    cc = cc -1;
+}
+         }
+
+         printIt();
+       
+        //After the board is created this for loop prvars out the sudoku board that was created.
+       function printIt(){
+        document.write("<table>");
+         for (aa = 0; aa < 9; aa++){
+            document.write("<tr");
+             if(aa%3 == 0){
+                            document.write(" style='border-top-width:2px;'");
+                        }
+                         if(aa == 8){
+                            document.write(" style='border-bottom-width:2px;'");
+                        }
+                         document.write(">");
+             for (bb = 0; bb < 9; bb++){
+                 if(board[aa][bb] == 0){
+                    document.write("<td");
+                        if(bb%3 == 0){
+                            document.write(" style='border-left-width:2px;'");
+                        }
+                         if(bb == 8){
+                            document.write(" style='border-right-width:2px;'");
+                        }
+                     document.write("></td>");
+                     }else{
+                         document.write("<td");
+                         if(bb%3 == 0){
+                            document.write(" style='border-left-width:2px;'");
+                        }
+                        if(bb == 8){
+                            document.write(" style='border-right-width:2px;'");
+                        }
+                        document.write(">");
+          document.write(board[aa][bb]);
+           document.write("</td>");
+      }
+           if(bb == 8){
+               document.write("</tr>");
+           }
+             }
+             document.write("</tr>");
+         }
+         document.write("</table>");
+     }
+
+
+
+         //optional automatic refresh
+          //     setTimeout(function(){
+ //        too = 1000000000;
+ // restart();
+ //     }, 3000);  
+
+    </script>

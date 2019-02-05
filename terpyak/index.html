@@ -1,0 +1,220 @@
+<!--    var scoresRef = new Firebase("https://blistering-fire-195.firebaseio.com");
+
+scoresRef.orderByChild("lat").startAt(97).endAt(98).on("value", function(snapshot) {
+  snapshot.forEach(function(data) {
+      //alert(data.child("id").val() + " " + data.child("longi").val() + " " + data.child("lat").val() + " " + lat + " " + longi);  
+    distance = google.maps.geometry.spherical.computeDistanceBetween(new google.maps.LatLng(lat,longi), new google.maps.LatLng(data.child("lat").val(),data.child("longi").val()));    
+//alert(distance);
+ $("#body1").append("<a href='pie.html#" + data.child("id").val() + "'><div class='bigBoxes'><img src='http://stevengrutman.com/wristband/" + data.child("pic").val() + "' class='bigImage' /><div class='distance' id='r" + data.child("id").val() +  "'></div></div></a>");
+ document.getElementById("r"+data.child("id").val()+"").innerHTML = (Math.round((distance*0.000621371192) * 10 ) / 10);
+  });
+}); 
+ -->
+<style>
+textarea{
+	resize:none;
+}
+</style>
+<script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+<textarea id="post" class="forms" maxlength="600" rows="10" cols="60" placeholder="Tell your story in 60 words or less..."></textarea>
+<p id="numberLeft">60</p>
+<button id="submitPost" class="forms">Post</button>
+
+<p id="posts"></p>
+
+<p id="blank">
+<script>
+var scoresRef2 = new Firebase("https://boiling-fire-1477.firebaseio.com/");
+</script>
+</p>
+
+<script>
+var scoresRef = scoresRef2;
+$("#blank").html("");
+var hopperRef = scoresRef.child("posts");
+// var numberOfPosts = 0;
+function makeid()
+{
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    for( var i=0; i < 64; i++ )
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+    return text;
+}
+
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + "; " + expires;
+}
+
+// function loadPosts(){
+// 	$.ajax({
+//   url: "addPost.php",
+//   method: "POST",
+//   data: { mode: 1 },
+//   dataType: "html"
+// }).done(function( msg ) {
+// 	// console.log(msg);
+//   var arr = msg.split("SfjrMzGqAAcKVvi8QIz6UMEdLRAPfAqzS3asm18frOOOc0tsOOrST0BKSTyoPKId"); 
+//   // numberOfPosts = arr.length;
+//   var allPosts = "";
+//   for(var i = 0; i<arr.length; i++){
+//   	allPosts += arr[i]+"</br>";
+//   }
+//   $("#posts").html(allPosts);
+// }).fail(function( jqXHR, textStatus ) {
+//   console.log( "Request failed: " + textStatus );
+// });
+// }
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+function addPost(){
+  if(60-count >= 0){
+// 		$.ajax({
+//   url: "addPost.php",
+//   method: "POST",
+//   data: { user: document.cookie, data: $("#post").val(), mode: 0 },
+//   dataType: "html"
+// }).done(function( msg ) {
+// 	checkNewPosts();
+//   // console.log(msg);
+// }).fail(function( jqXHR, textStatus ) {
+//   console.log( "Request failed: " + textStatus );
+// });
+
+hopperRef.push({
+   
+    data: $("#post").val(),
+    user: getCookie("user"),
+    comments: "comments",
+    datetimeOrdering: 1000 - new Date().getTime() / 10000000000,
+    score: 0
+  
+});
+
+$("#post").val('');
+}
+}
+
+// function checkNewPosts(){
+// 		// console.log(numberOfPosts);
+// 	$.ajax({
+//   url: "addPost.php",
+//   method: "POST",
+//   data: { mode: 2 },
+//   dataType: "html"
+// }).done(function( msg ) {
+// 	// alert(msg);
+//   if(numberOfPosts != parseInt(msg)){
+//   	numberOfPosts = parseInt(msg);
+//   	console.log("refresh");
+//   	loadPosts();
+//   }
+// }).fail(function( jqXHR, textStatus ) {
+//   console.log( "Request failed: " + textStatus );
+// });
+// }
+
+
+scoresRef.child('posts').orderByChild("datetimeOrdering").on("value", function(snapshot) {
+  var total = "";
+  snapshot.forEach(function(data) {
+     if(data.child("score").val() <= -6){
+      var removed = new Firebase("https://boiling-fire-1477.firebaseio.com/posts/"+data.key());
+    removed.remove();
+    }else{
+    total += data.child("score").val()+" "+data.child("data").val()+" <button onclick='score("+data.child('score').val()+", 1, \""+data.key()+"\")'>Up</button><button onclick='score("+data.child('score').val()+", 2, \""+data.key()+"\")'>Down</button><button onclick='score("+data.child('score').val()+", 3, \""+data.key()+"\")'>Super Like</button></br>";
+  }
+  });
+  $("#posts").html(total);
+}, function (errorObject) {
+  console.log("The read failed: " + errorObject.code);
+});
+
+
+function score(scores, upOrDown, name){
+  var change = new Firebase("https://boiling-fire-1477.firebaseio.com/posts/"+name);
+  if(upOrDown == 1){
+change.update({
+    score: scores+1
+});
+}
+ if(upOrDown == 2){
+change.update({
+    score: scores-1
+});
+}
+ if(upOrDown == 3){
+change.update({
+    score: scores+6
+});
+}
+}
+
+
+
+$(document).ready(function(){
+if(document.cookie == "")
+setCookie("user", makeid(), 10000);
+// loadPosts();
+});
+
+$(".forms").on("keydown", function (e) {
+    if (e.keyCode === 13) {  //checks whether the pressed key is "Enter"
+        addPost();
+    e.preventDefault();
+    }
+});
+
+$("#submitPost").click(function(){
+	addPost();
+});
+
+// setInterval(function(){
+// 	checkNewPosts();
+// }, 8000);
+
+var numberLeft = $("#numberLeft");
+var count = 0;
+$("#post").keyup(function(){
+  count =0;
+	try{
+		count += $("#post").val().match(/\S+/g).length;
+	}catch(e){
+
+	}
+	try{
+		count += $("#post").val().match(/[a-z][A-Z][a-z]/g).length;
+	}catch(e){
+
+	}
+	
+	numberLeft.html(60-count);
+	if(60-count<0)
+		numberLeft.css("color", "red");
+	else
+		numberLeft.css("color", "green");
+	// console.log($("#post").val().match(/ /g).length);
+});
+</script>
+
+

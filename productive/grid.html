@@ -1,0 +1,108 @@
+ <style>
+ .grid-container{
+        width: 100%; 
+        max-width: 1200px;   
+        margin:auto;
+        /*background-color:green;   */
+    }
+
+    /*-- our cleafix hack -- */ 
+    .row:before, 
+    .row:after {
+        content:"";
+          display: table ;
+        clear:both;
+    }
+
+    [class*='col-'] {
+        float: left; 
+        /*-- our gutter -- */
+        padding: 0;
+        margin:.5%; 
+        background-color: #FFDCDC;
+    }
+
+    .col-1{ width: 15.66%; }
+    .col-2{ width: 32.33%; }
+    .col-3{ width: 49%;    }
+    .col-4{ width: 65.66%; }
+    .col-5{ width: 82.33%; }
+    .col-6{ width: 99%;   }
+
+
+@media (min-width:992px) and (max-width:1200px){
+.col-1{ width: 32.33%;    }
+        .col-2{ width: 32.33%; }
+    .col-3{ width: 49%;    }
+    .col-4{ width: 65.66%;  }
+        .col-5{ width: 82.33%; }
+    .col-6{ width: 99%;   }
+    .row .col-5 ~ .col-1{
+            width: 15.66%; 
+        }
+}
+
+  @media (min-width:768px) and (max-width:991px){
+        .col-1{ width: 32.33%;    }
+        .col-2{ width: 49%;        }
+        .col-3{ width: 99%;  }
+        .col-4{ width: 99%;    }
+        .col-5{ width: 99%;    }
+        .col-6{ width: 99%;      }
+
+        .row .col-2:last-of-type{
+            width: 99%; 
+        }
+
+        .row .col-5 ~ .col-1{
+            width: 99%; 
+        }
+    }
+
+
+    @media (max-width:767px){
+        .col-1{ width: 49%;        }
+        .col-2{ width: 99%;    }
+        .col-3{ width: 99%;    }
+        .col-4{ width: 99%;    }
+        .col-5{ width: 99%;    }
+        .col-6{ width: 99%;      }
+    .row .col-5 ~ .col-1{
+            width: 99%; 
+        }
+    }
+
+
+</style>
+ 
+
+ <div class="grid-container">
+    <div class="row">
+        <div class="col-1"><p>col-1</p></div> 
+        <div class="col-1"><p>col-1</p></div> 
+        <div class="col-1"><p>col-1</p></div> 
+        <div class="col-1"><p>col-1</p></div> 
+        <div class="col-1"><p>col-1</p></div> 
+        <div class="col-1"><p>col-1</p></div> 
+    </div> 
+    <div class="row">
+        <div class="col-2"><p>col-2</p></div> 
+        <div class="col-2"><p>col-2</p></div> 
+        <div class="col-2"><p>col-2</p></div> 
+    </div> 
+    <div class="row">
+        <div class="col-3"><p>col-3</p></div> 
+        <div class="col-3"><p>col-3</p></div> 
+    </div> 
+    <div class="row">
+        <div class="col-4"><p>col-4</p></div> 
+        <div class="col-2"><p>col-2</p></div> 
+    </div> 
+    <div class="row">
+        <div class="col-5"><p>col-5</p></div> 
+        <div class="col-1"><p>col-1</p></div> 
+    </div> 
+    <div class="row">
+        <div class="col-6"><p>col-6</p></div> 
+    </div> 
+</div>

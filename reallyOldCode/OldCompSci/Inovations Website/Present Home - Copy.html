@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Untitled Document</title>
+</head>
+<script type="text/javascript">
+function goToNewPage(dropdownlist)
+{
+var url = dropdownlist.options(dropdownlist.selectedIndex).value;
+if (url != "")
+{
+window.open(url);
+}
+}
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1256" />
+<style type="text/css">
+<!--
+/* set the menu style */
+.menuHead { font-weight: bold; font-size: 21px; background-color: yellow;}
+.menuChoices { background-color: gold; width: 225px;}
+.menu a {color: #000000; text-decoration: none;}
+.menu a:hover {text-decoration: underline;} 
+/* position your menus */
+#menu1 {position: absolute; top: 202.5px; left: 275px; width: 225px;}
+-->
+</style>
+<script type="text/javascript">
+<!--
+/* we'll only allow DOM browsers to simplify things*/
+(document.getElementById ? DOMCapable = true : DOMCapable = false);
+function hide(menuName)
+{
+if (DOMCapable)
+{
+var theMenu = document.getElementById(menuName+"choices");
+theMenu.style.visibility = 'hidden';
+}
+}
+function show(menuName)
+{
+if (DOMCapable)
+{
+var theMenu = document.getElementById(menuName+"choices");
+theMenu.style.visibility = 'visible';
+}
+}
+//--> </script>
+<body>
+<div id="menu1" dir="rtl" class="menu" onmouseover="show('menu1');" onmouseout="hide('menu1');">
+<div class="menuHead"><center>Sports</center></div>
+<div id="menu1choices" class="menuChoices"><center> 
+<a href="http://www.google.com">google</a><br />
+<a href="http://www.yahoo.com">yahoo</a><br />
+<a href="http://www.teoma.com">teoma</a><br />
+
+<a href="http://www.altavista.com">altavista</a><br /></center>
+</div>
+</div>
+</body>
+</html>
+
+
+
+
+
+

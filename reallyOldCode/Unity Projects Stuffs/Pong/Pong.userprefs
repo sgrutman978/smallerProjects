@@ -1,0 +1,13 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\..\..\..\Documents\Jumper\Assets\Scripts\playerController.cs">
+    <Files>
+      <File FileName="..\..\..\..\..\Documents\Jumper\Assets\Scripts\playerController.cs" Line="26" Column="28" />
+      <File FileName="..\..\..\..\..\Documents\Jumper\Assets\playerPhysics.cs" Line="6" Column="15" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

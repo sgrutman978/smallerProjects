@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Untitled Document</title>
+</head>
+<script type="text/javascript">
+function goToNewPage(dropdownlist)
+{
+var url = dropdownlist.options(dropdownlist.selectedIndex).value;
+if (url != "")
+{
+window.open(url);
+}
+}
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1256" />
+<style type="text/css">
+<!--
+/* set the menu style */
+.menuHead { font-weight: bold; font-size: 21px; background-image: url(http://3.bp.blogspot.com/_shNfb4kWu0g/SOShpuw27SI/AAAAAAAABSE/zFPYwed1Id4/s400/Static-Electricity-tw.png); color: gold;}
+.menuChoices { background-color: gold; width: 225px;}
+.menu a {color: #000000; text-decoration: none;}
+.menu a:hover {text-decoration: underline;} 
+/* position your menus */
+#menu1 {position: absolute; top: 202.5px; left: 275px; width: 225px;}
+#menu2 {position: absolute; top: 202.5px; left: 500px; width: 225px;}
+#menu3 {position: absolute; top: 202.5px; left: 725px; width: 225px;}
+#menu4 {position: absolute; top: 202.5px; left: 950px; width: 225px;}
+#menu5 {position: absolute; top: 290px; left: 25 width: 225px;}
+-->
+</style>
+<script type="text/javascript">
+<!--
+/* we'll only allow DOM browsers to simplify things*/
+(document.getElementById ? DOMCapable = true : DOMCapable = false);
+function hide(menuName)
+{
+if (DOMCapable)
+{
+var theMenu = document.getElementById(menuName+"choices");
+theMenu.style.visibility = 'hidden';
+}
+}
+function show(menuName)
+{
+if (DOMCapable)
+{
+var theMenu = document.getElementById(menuName+"choices");
+theMenu.style.visibility = 'visible';
+}
+}
+//-->
+function startTime()
+{
+var today=new Date();
+var h=today.getHours();
+var m=today.getMinutes();
+var s=today.getSeconds();
+// add a zero in front of numbers<10
+m=checkTime(m);
+s=checkTime(s);
+document.getElementById('txt').innerHTML=h+":"+m+":"+s;
+t=setTimeout('startTime()',500);
+}
+
+function checkTime(i)
+{
+if (i<10)
+  {
+  i="0" + i;
+  }
+return i;
+}
+</script>
+<body style="background-color:blue" class="hasOneColumn hasSidebar" onload="startTime()">
+<div style="visibility: hidden; height: 1px; width: 1px; position: absolute; z-index: 100000; " id="_atssh"><iframe id="_atssh340" title="AddThis utility frame" 
+style="height: 1px; width: 1px; position: absolute; z-index: 100000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; 
+border-left-width: 0px; border-style: initial; border-color: initial; left: 0px; top: 0px"></iframe></div>
+</br><center style="color:white;font-size:50px">Present Day Nanotechnology</center>
+<center style="color:white">A Steven Grutman production</center>
+</br><center style="background-color:saddlebrown;color:lime;font:bold;font-size:30px">Uses of Nanotechnology in the Present Day</center>
+</br></br>
+<p style="color:white"><script type="text/javascript">
+var d = new Date()
+var weekday=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday")
+var monthname=new Array("January","February","March","April","May","June","July","August","September","October","November","December")
+document.write (weekday[d.getDay()] + " ")
+document.write(monthname[d.getMonth()] + " ")
+document.write(d.getDate() + ", ")
+document.write(d.getFullYear())
+</script></p><div id="txt" style="color:white"></div>
+<div id="menu1" dir="rtl" class="menu" onmouseover="show('menu1');" onmouseout="hide('menu1');">
+<div class="menuHead"><center>Sports</center></div>
+<div id="menu1choices" class="menuChoices"><center> 
+<a href="http://www.google.com">google</a><br />
+<a href="http://www.yahoo.com">yahoo</a><br />
+<a href="http://www.teoma.com">teoma</a><br />
+
+<a href="http://www.altavista.com">altavista</a><br /></center>
+</div>
+</div>
+<div id="menu2" dir="rtl" class="menu" onmouseover="show('menu2');" onmouseout="hide('menu2');">
+<div class="menuHead"><center>Military</center></div>
+<div id="menu2choices" class="menuChoices"><center> 
+<a href="http://www.ebay.com">ebay</a><br />
+<a href="http://www.buy.com">buy</a><br /></center>
+</div>
+</div>
+<div id="menu3" dir="rtl" class="menu" onmouseover="show('menu3');" onmouseout="hide('menu3');">
+<div class="menuHead"><center>Medical</center></div> 
+<div id="menu3choices" class="menuChoices"><center> 
+<a href="http://www.google.com/#q=evan+sucks&bav=on.2,or.r_gc.r_pw.&fp=560fefca0938c389&hl=en">Evan Sucks</a><br />
+<a href="http://www.w3c.org">W3C</a><br />
+<a href="http://www.pint.com">PINT</a><br /></center>
+</div>
+</div>
+<div id="menu4" dir="rtl" class="menu" onmouseover="show('menu4');" onmouseout="hide('menu4');">
+<div class="menuHead"><center>Technology and Energy</center></div> 
+<div id="menu4choices" class="menuChoices"><center> 
+<a href="http://www.javascript.com">JavaScriptRef</a><br />
+<a href="http://www.w3c.org">W3C</a><br />
+<a href="http://www.pint.com">PINT</a><br /></center>
+</div>
+</div>
+<div id="menu5" dir="rtl" class="menu" onmouseover="show('menu5');" onmouseout="hide('menu5');">
+<div class="menuHead"><center>Technology and Energy</center></div> 
+<div id="menu5choices" class="menuChoices"><center> 
+<a href="http://www.javascript.com">JavaScriptRef</a><br />
+<a href="http://www.w3c.org">W3C</a><br />
+<a href="http://www.pint.com">PINT</a><br /></center>
+</div>
+</div>
+<script type="text/javascript">
+<!--
+/* Don't hide menus for JS off and older browsers */
+if (DOMCapable)
+{
+hide("menu1"); 
+hide("menu2");
+hide("menu3");
+hide("menu4");
+hide("menu5");
+}
+//-->
+</script>
+<div style="background-color:red;position:absolute;top:275px;left:275px;width:900px;font-size:20px;">
+<a href="http://en.wikipedia.org/wiki/Nanotechnology">Nanotechnology</a> is used in many different fields. In 
+<a href="http://en.wikipedia.org/wiki/Sports">sports</a>, <a href="http://en.wikipedia.org/wiki/Scientists">scientists</a> 
+use nanotechnology to create new <a href="http://en.wikipedia.org/wiki/Material">materials</a> for <a href="http://en.wikipedia.org/wiki/Sportswear">sportswear</a> 
+and better <a href="http://en.wikipedia.org/wiki/Equipment">equipment</a>. Scientists use nanotechnology to create better 
+<a href="http://en.wikipedia.org/wiki/Weapon">weapons</a> and more durable, useful, protected, and helpful 
+<a href="http://en.wikipedia.org/wiki/Uniform">uniforms</a> for the military. They are also using nanotechnology to try and find new <a href="http://en.wikipedia.org/wiki/Cure">cures</a> 
+and <a href="http://en.wikipedia.org/wiki/Vacine">vacines</a>. Nanotechnology is also being used to find newer, more effective and more efficient ways to create 
+<a href="http://en.wikipedia.org/wiki/Energy">energy</a>. They are researching and developing new and revolutionary <a href="http://en.wikipedia.org/wiki/Device">devices</a> and 
+<a href="http://en.wikipedia.org/wiki/Application">applications</a>.</div>
+</body>
+</html>
+
+
+
+
+
+

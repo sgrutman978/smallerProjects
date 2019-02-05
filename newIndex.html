@@ -1,0 +1,157 @@
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
+<style>
+body{
+	padding:0;
+	margin:0;
+	background-color:rgb(94,180,255);
+}
+.large{
+	height:400px;
+	width:100%;
+	position:relative;
+	margin:0;
+	text-align:center;
+}
+.white{
+	background-color:white;
+}
+.blue{
+	background-color:rgb(94,180,255);
+}
+#prof{
+	height:230px;
+	border-radius: 50%;
+	/*top:30px;
+	left:45px;*/
+	/*float:right;*/
+	position:relative;
+}
+ @media (max-width:385px){
+        #prof{
+        	margin:23px auto 18px auto;
+        }
+        .pr {
+            font-size:2.5em;
+        }
+        .pr2 {
+            font-size:2em;
+        }
+        .backs{
+	width:100%;
+}
+    }
+ @media (max-width:730px) and (min-width:385px){
+        #prof{
+        	margin:23px auto 15px auto;
+        }
+        .pr {
+            font-size:3em;
+        }
+        .pr2 {
+            font-size:2em;
+        }
+        .backs, .backs30, .backs70{
+	width:100%;
+}
+    }
+ @media (max-width:970px) and (min-width:730px){
+        .pr {
+            font-size:3em;
+        }
+        .pr2 {
+            font-size:2em;
+           /* position: relative;
+  top: 50%;
+  transform: translateY(-50%);*/
+  background-color: red;
+        }
+        #prof{
+        	margin:23px auto 30px auto;
+        }
+        .backs{
+	width:50%;
+}
+.backs30{
+	width:30%;
+}
+.backs70{
+	width:70%;
+}
+    }
+     @media (min-width:970px){
+        .pr {
+            font-size:4em;
+        }
+        .pr2 {
+            font-size:2.5em;
+        }
+        .backs{
+	width:50%;
+}
+.backs30{
+	width:30%;
+}
+.backs70{
+	width:70%;
+}
+        #prof{
+        	margin:23px auto 25px auto;
+        }
+    }
+.pr{
+	position:relative;
+	/*float:right;*/
+	/*width:60%;*/
+	font-family:ubuntu;
+	text-align:center;
+margin:auto;
+	/*top:15px;
+	right:15px;*/
+}
+.pr2{
+	position:relative;
+	/*float:right;*/
+	/*width:60%;*/
+	font-family:ubuntu;
+	text-align:center;
+}
+.prLeft{
+	float:left;
+}
+.prRight{
+	float:right;
+}
+.pb{
+	position:relative;
+	float:right;
+	width:90%;
+	font-family:ubuntu;
+	font-size:3em;
+text-align:center;
+	top:-40px;
+	right:5%;
+}
+</style>
+<body>
+<div class="large blue" style="top:0%">
+	<img src="prof.jpg" id="prof" />
+	<p class="pr">Hello world, I'm Steven Grutman. </p>
+	<!-- <p class="pb">I am a Computer Science Major and Astronomy Minor at the University of Maryland. </p> -->
+</div>
+
+<div class="white">
+	<img class="backs" src="mckeldin.jpg" />
+	<div class="backs white pr2 prLeft">I am currently an undergraduate at the University of Maryland, majoring in Computer Science and minoring in Astronomy.</div>
+</div>
+<div>
+	<div class="backs70 pr2 prLeft">I am currently an undergraduate at the University of Maryland, majoring in Computer Science and minoring in Astronomy.</div>
+	<img class="backs30" src="vite.png" />
+</div>
+
+<!-- <div class="large blue" id="afterMck"></div> -->
+
+<!-- <div class="large blue" style="top:1600px"></div> -->
+<!-- <div class="large white" style="top:2000px"></div> -->
+<!-- <img src="1.png" style="width:100%;left:0px;top:0px;margin:0;padding:0;position:absolute" /> -->
+
+</body>

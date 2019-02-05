@@ -1,0 +1,49 @@
+import java.util.Random;
+import javax.swing.JOptionPane;
+
+
+
+public class factor {
+    
+    /*public static BigInteger generateBigOne() {
+        final Random random = new Random();
+
+        long loop = random.nextLong();
+        String result = "";
+        for (int i = 0; i < loop; i++) {
+            result += random.nextLong();
+        }
+        return new BigInteger(result);
+    }
+    */
+    public static void main(String[] args) {
+       Random gen = new Random();
+       String factors = "";
+       long temp = 0;
+       String hello = JOptionPane.showInputDialog("Type a random number(Must be smaller than 4,611,686,018,427,387,904), or type 1 for a random large number.");
+      temp = Long.parseLong(hello);
+       if(temp < 2)
+       temp = Math.abs(gen.nextLong());
+       long temp2 = temp;
+       System.out.println("  The factors of   \n\n  " + temp2 + "   are:");
+       System.out.println("");
+       while(temp != 1){
+           //System.out.print(temp);
+       for(long ii = 2; ii <= (Math.ceil(Math.sqrt(temp))); ii++){
+      // if(ii%12345 == 0)
+     // System.out.println(temp + " " + ii + " " + factors);
+            if(temp%ii == 0){
+                factors = factors + "  " + ii;
+               // System.out.println(temp + " " + ii + " " + factors);
+                temp = temp/ii;
+                ii = temp + 1;       
+      }else{
+       if(ii == Math.ceil(Math.sqrt(temp))){
+       factors = factors + " " + temp;
+                System.out.println(factors);
+                temp = 1;
+                ii = temp + 1;   
+       }}
+            }
+       }}}
+
